@@ -74,7 +74,16 @@ export function SignInView({ appName }: props) {
         {
           provider: "google",
           callbackURL:"/"
+        },
+      {
+        onSuccess: () => {
+          setPanding(false);
+        },
+        onError: ({ error }) => {
+          setPanding(false);
+          setError(error.message);
         }
+      }
       );
     };
 

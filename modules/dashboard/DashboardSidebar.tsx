@@ -1,0 +1,77 @@
+"use client";
+
+import { Separator } from "@/components/ui/separator";
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar";
+import { cn } from "@/lib/utils";
+import { BotIcon, StarIcon, VideoIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const firstSection = [
+  {
+    icon: VideoIcon,
+    lable: "Meeting",
+    href: "/meeting",
+  },
+  {
+    icon: BotIcon,
+    lable: "Agent",
+    href: "/agent",
+  },
+];
+
+const secondSection = [
+  {
+    icon: StarIcon,
+    lable: "Upgrade",
+    href: "/upgrade",
+  }
+];
+
+export function DashboardSidebar() {
+    const pathName = usePathname();
+  return(
+    <Sidebar>
+        <SidebarHeader className="text-sidebar-accent-foreground">
+            <Link href="/" className="flex items-center gap-2 px-2 pt-2">
+                <Image src="/logo.svg" height={36} width={36} alt="meet.ai"/>
+                <p className="text-2xl font-bold">Meet.Ai</p>
+            </Link>
+        </SidebarHeader>
+        <div className="px-4 py-2 ">
+            <Separator className="opacity-100 text-black"/>
+        </div>
+        <SidebarContent>
+            <SidebarGroup>
+                <SidebarGroupContent>
+                    <SidebarMenu>
+                        {firstSection.map((item)=>(
+                            <SidebarMenuItem key={item.href}>
+                                <SidebarMenuButton className={cn("")} asChild>
+                                    <Link href={item.href}>
+                                    <span className="text-sm font-medium tracking-tight">
+                                        {item.lable}
+                                    </span>
+                                    </Link> 
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
+                            
+                        ))}
+                    </SidebarMenu>
+                </SidebarGroupContent>
+            </SidebarGroup>
+        </SidebarContent>
+    </Sidebar>
+  )
+}

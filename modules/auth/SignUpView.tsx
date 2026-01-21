@@ -73,12 +73,12 @@ export function SignUpView({ appName }: props) {
     )
   }
 
-  const googleHandle = async () => {
+  const socialHandle = async (provider:"google"|"github") => {
       setError(null);
       setPanding(true);
       await authClient.signIn.social(
         {
-          provider: "google",
+          provider: provider,
           callbackURL:"/"
         },
       {
@@ -204,10 +204,10 @@ export function SignUpView({ appName }: props) {
                   </span>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
-                  <Button disabled={panding} variant={"outline"} type="button" className="w-full" onClick={googleHandle}>
+                  <Button disabled={panding} variant={"outline"} type="button" className="w-full" onClick={()=>{socialHandle("google")}}>
                     google
                   </Button>
-                  <Button disabled={panding} variant={"outline"} type="button" className="w-full">
+                  <Button disabled={panding} variant={"outline"} type="button" className="w-full" onClick={()=>{socialHandle("github")}}>
                     github
                   </Button>
                 </div>

@@ -67,12 +67,12 @@ export function SignInView({ appName }: props) {
     );
   };
 
-  const googleHandle = async () => {
+  const socialHandle = async (provider:"google"|"github") => {
       setError(null);
       setPanding(true);
       await authClient.signIn.social(
         {
-          provider: "google",
+          provider: provider,
           callbackURL:"/"
         },
       {
@@ -86,6 +86,9 @@ export function SignInView({ appName }: props) {
       }
       );
     };
+
+   
+
 
   return (
     <div className="flex flex-col gap-6">
@@ -162,7 +165,7 @@ export function SignInView({ appName }: props) {
                     variant={"outline"}
                     type="button"
                     className="w-full"
-                    onClick={googleHandle}
+                    onClick={()=>{socialHandle("google")}}
                   >
                     google
                   </Button>
@@ -171,6 +174,7 @@ export function SignInView({ appName }: props) {
                     variant={"outline"}
                     type="button"
                     className="w-full"
+                    onClick={()=>{socialHandle("github")}}
                   >
                     github
                   </Button>

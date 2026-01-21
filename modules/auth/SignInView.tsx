@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { OctagonAlertIcon } from "lucide-react";
+import { FaGoogle ,FaGithub} from "react-icons/fa";
 
 import { authClient } from "@/lib/auth-client";
 
@@ -167,7 +168,7 @@ export function SignInView({ appName }: props) {
                     className="w-full"
                     onClick={()=>{socialHandle("google")}}
                   >
-                    google
+                    <FaGoogle /> google
                   </Button>
                   <Button
                     disabled={panding}
@@ -176,7 +177,7 @@ export function SignInView({ appName }: props) {
                     className="w-full"
                     onClick={()=>{socialHandle("github")}}
                   >
-                    github
+                    <FaGithub />github
                   </Button>
                 </div>
                 <div className="text-center text-sm">

@@ -4,6 +4,9 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { OctagonAlertIcon } from "lucide-react";
 
+import { FaGoogle ,FaGithub} from "react-icons/fa";
+
+
 import { authClient } from "@/lib/auth-client";
 
 import { Card, CardContent } from "@/components/ui/card";
@@ -205,10 +208,10 @@ export function SignUpView({ appName }: props) {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <Button disabled={panding} variant={"outline"} type="button" className="w-full" onClick={()=>{socialHandle("google")}}>
-                    google
+                    <FaGoogle />google
                   </Button>
                   <Button disabled={panding} variant={"outline"} type="button" className="w-full" onClick={()=>{socialHandle("github")}}>
-                    github
+                     <FaGithub />github
                   </Button>
                 </div>
                 <div className="text-center text-sm">

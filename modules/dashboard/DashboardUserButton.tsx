@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -13,7 +12,6 @@ import {
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { GeneratedAvatar } from "@/components/Generated-avatar";
 import { ChevronDownIcon } from "lucide-react";
-import { router } from "better-auth/api";
 import { useRouter } from "next/navigation";
 
 export function DashboardUserButton(){
@@ -54,7 +52,7 @@ export function DashboardUserButton(){
                </div>     
             <ChevronDownIcon />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" side="right" className="w-72">
+            <DropdownMenuContent align="end" side="top" className="w-72">
                 <DropdownMenuLabel>
                    <div className="flex flex-col gap-1">
                      <span className="font-medium truncate">{data.user.name}</span>

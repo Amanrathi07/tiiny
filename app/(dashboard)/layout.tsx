@@ -1,6 +1,6 @@
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { DashboardSidebar } from "@/modules/dashboard/DashboardSidebar"
-import DashboardNavbar from "@/modules/navbar/DashboardNavbar"
+import {DashboardNavbar} from "@/modules/navbar/DashboardNavbar"
 
 interface props{
     children:React.ReactNode

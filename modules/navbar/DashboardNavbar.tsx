@@ -1,6 +1,9 @@
+"use client";
 
-export default function DashboardNavbar() {
+export  function DashboardNavbar() {
   return (
-    <div>DashboardNavbar</div>
+    <nav className="flex px-4 gap-x-2 items-center py-3 border-b bg-background">
+        hello
+    </nav>
   )
 }

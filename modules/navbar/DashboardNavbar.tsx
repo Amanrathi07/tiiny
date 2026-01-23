@@ -14,7 +14,7 @@ export  function DashboardNavbar() {
             ?<PanelLeftIcon   className="size-4"  />
             :<PanelLeftClose  className="size-4"  />}
         </Button>
-        <Button className="h-9 w-[240px ] justify-start font-normal text-muted-foreground hover:text-muted-foreground" variant="outline" size="sm" onClick={()=>{}} >
+        <Button className="h-9 w-[240px ] justify-start font-normal text-muted-foreground hover:text-muted-foreground" variant="outline" size="sm" >
             <SearchIcon />
             search
             <kbd>

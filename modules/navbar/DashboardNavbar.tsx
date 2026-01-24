@@ -17,8 +17,8 @@ export  function DashboardNavbar() {
         <Button className="h-9 w-[240px ] justify-start font-normal text-muted-foreground hover:text-muted-foreground" variant="outline" size="sm" >
             <SearchIcon />
             search
-            <kbd>
-                span
+            <kbd className="ml-auto pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
+                <span className="text-xs">&#8984;</span>
             </kbd>
         </Button>
         

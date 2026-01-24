@@ -145,7 +145,7 @@ export function SignInView({ appName }: props) {
                   />
                 </div>
                 {!!error && (
-                  <Alert className="bg-destructive/10 border-none">
+                  <Alert className="  destructive/10 border-none">
                     <OctagonAlertIcon className="h-4 w-4 text-destructive!" />
                     <AlertTitle>{error}</AlertTitle>
                   </Alert>
